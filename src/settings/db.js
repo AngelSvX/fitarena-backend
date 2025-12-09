@@ -4,10 +4,10 @@ import dotenv from 'dotenv'
 dotenv.config()
 
 export const myGymDB = mysql2.createPool({
-  host: process.env.HOST,
-  user: process.env.USER,
-  database: process.env.DATABASE,
-  password: process.env.PASSWORD
+  host: process.env.MYSQLHOST,
+  user: process.env.MYSQLUSER,
+  database: process.env.MYSQLDATABASE,
+  password: process.env.MYSQLPASSWORD
 })
 
 export const testConnection = async () => {
