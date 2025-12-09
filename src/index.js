@@ -7,9 +7,17 @@ import specialityRouter from './routes/speciality.routes.js';
 import { payRouter } from './routes/pay.routes.js';
 
 const app = express();
-dotenv.config()
 
-app.use(cors())
+app.use(cors({
+  origin: [
+    'http://localhost:5173',
+    'https://fitarena-frontend-weld.vercel.app'
+  ],
+  credentials: true,
+  methods: ['GET', 'POST', 'PUT', 'DELETE', 'PATCH'],
+  allowedHeaders: ['Content-Type', 'Authorization']
+}))
+
 app.use(express.urlencoded({
   extended: true
 }))
