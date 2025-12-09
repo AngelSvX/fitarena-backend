@@ -7,7 +7,8 @@ export const myGymDB = mysql2.createPool({
   host: process.env.MYSQLHOST,
   user: process.env.MYSQLUSER,
   database: process.env.MYSQLDATABASE,
-  password: process.env.MYSQLPASSWORD
+  password: process.env.MYSQLPASSWORD,
+  port: process.env.MYSQLPORT
 })
 
 export const testConnection = async () => {
