@@ -1,0 +1,35 @@
+import express from 'express'
+import { addClassController, addSpecialityController, getActiveClassesController, getAllClassesController, getAllClassesForUserController, getAllPaymentsController, getAllTrainersController, getAllUsersController, getClassDetailsController, getClassesController, getdayScheduleController, getMySubscriptionsController, getNextClassController, getPartnersByClassController, getPaymentByMonthController, getPaymentByUserController, getRatesController, getScheduleController, getSpecialityController, getStudentsByTrainerController, getTotalIncomeController, getTotalUsersAndTrainersController, getTypeSubscriptionsController, updateAllClassesController, updateAttendanceController, updateClassController, updateRateController, updateUserController } from '../controllers/speciality.controller.js'
+
+const specialityRouter = express.Router()
+
+specialityRouter.get("/getClasses/:id", getClassesController)
+specialityRouter.get("/getClassDetails/:id", getClassDetailsController)
+specialityRouter.get("/getSchedule/:id", getScheduleController)
+specialityRouter.get("/getdaySchedule/:id", getdayScheduleController)
+specialityRouter.get("/getTotalUsersAndTrainers", getTotalUsersAndTrainersController)
+specialityRouter.get("/getActiveClasses", getActiveClassesController)
+specialityRouter.get("/getTotalIncome", getTotalIncomeController)
+specialityRouter.get("/getAllUsers", getAllUsersController)
+specialityRouter.get("/getAllTrainers", getAllTrainersController)
+specialityRouter.get("/getAllClasses", getAllClassesController)
+specialityRouter.get("/getRates", getRatesController)
+specialityRouter.get("/getAllPayments", getAllPaymentsController)
+specialityRouter.get("/getPaymentByMonth", getPaymentByMonthController)
+specialityRouter.get("/getTypeSubscriptions/:id", getTypeSubscriptionsController)
+specialityRouter.get("/getAllClassesForUser", getAllClassesForUserController)
+specialityRouter.get("/getMySubscriptions/:id", getMySubscriptionsController)
+specialityRouter.get("/getPaymentByUser/:id", getPaymentByUserController)
+specialityRouter.put("/updateUser/:id", updateUserController)
+specialityRouter.put("/updateClass/:id", updateClassController)
+specialityRouter.get("/getSpeciality", getSpecialityController)
+specialityRouter.post("/addSpeciality", addSpecialityController)
+specialityRouter.put("/updateRate/:id", updateRateController)
+specialityRouter.put("/updateClasses/:id", updateAllClassesController)
+specialityRouter.put("/updateAttendance/:id", updateAttendanceController)
+specialityRouter.get("/getStudentsByTrainer/:id", getStudentsByTrainerController)
+specialityRouter.get("/getNextClass/:id", getNextClassController)
+specialityRouter.get("/getPartnersByClass/:id", getPartnersByClassController)
+specialityRouter.post("/addClass", addClassController)
+
+export default specialityRouter
